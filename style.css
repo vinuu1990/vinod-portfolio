@@ -7,10 +7,12 @@ body {
 header {
   border-bottom: 2px solid #ddd;
   margin-bottom: 20px;
+  color: red;
 }
 
 h1 {
   margin-bottom: 5px;
+  
 }
 
 section {
