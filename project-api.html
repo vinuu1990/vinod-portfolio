@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Management API – Testing Case Study</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* Typography */
+.content h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #555;
+}
+
+/* Section Card */
+.section-card {
+  background: #ffffff;
+  padding: 28px;
+  margin-bottom: 28px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Metrics Dashboard */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.metric-box {
+  background: linear-gradient(135deg, #f4f6f9, #ffffff);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.metric-box h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.metric-box p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th {
+  background-color: #f4f6f9;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px;
+  border-top: 1px solid #e6e6e6;
+}
+
+/* Badges */
+.badge-pass {
+  background: #d4edda;
+  color: #155724;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-fail {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-open {
+  background: #fff3cd;
+  color: #856404;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.highlight-box {
+  background: #f8f9fc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+code {
+  background: #f4f6f9;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+pre {
+  background: #f4f6f9;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <div class="profile">
+    <img src="profile.jpg" alt="Profile">
+  </div>
+  <nav class="nav">
+    <a href="index.html">ABOUT ME</a>
+    <a href="./index.html#skills">SKILLS</a>
+    <a href="./index.html#projects">PROJECTS</a>
+  </nav>
+</aside>
+
+<main class="content">
+
+<h1>User Management REST API – Testing Case Study</h1>
+<p>
+This project demonstrates structured API testing practices applied to a REST-based User Management Service. 
+Testing focused on request validation, response accuracy, status codes, authentication behavior, and data integrity.
+</p><br>
+
+<!-- Project Overview -->
+<div class="section-card">
+  <h3>Project Overview</h3><br>
+  <ul>
+    <li><strong>API Type:</strong> RESTful Web Service</li>
+    <li><strong>Format:</strong> JSON</li>
+    <li><strong>Testing Scope:</strong> Functional, Negative, Validation</li>
+    <li><strong>Tool Used:</strong> Postman</li>
+    <li><strong>Methodology:</strong> API Test Case Design + Defect Logging</li>
+  </ul>
+</div>
+
+<!-- Endpoints Covered -->
+<div class="section-card">
+  <h3>Endpoints Covered</h3><br>
+  <ul>
+    <li><code>POST /users</code> – Create User</li>
+    <li><code>GET /users/{id}</code> – Fetch User</li>
+    <li><code>PUT /users/{id}</code> – Update User</li>
+    <li><code>DELETE /users/{id}</code> – Delete User</li>
+    <li><code>GET /users</code> – List All Users</li>
+  </ul>
+</div>
+
+<!-- Sample Test Case -->
+<div class="section-card">
+  <h3>Sample API Test Case</h3>
+  <br>
+  <p><strong>Test ID:</strong> API_TC_01</p>
+  <p><strong>Scenario:</strong> Create user with valid payload</p>
+
+  <p><strong>Request:</strong></p><br>
+  <pre>
+POST /users
+{
+  "name": "Heena",
+  "email": "heena@test.com",
+  "role": "admin"
+}
+  </pre>
+  <br>
+  <p><strong>Expected:</strong> Status 201 Created + User ID returned</p>
+  <p><strong>Status:</strong> <span class="badge-pass">Pass</span></p>
+</div>
+
+<!-- Negative Case -->
+<div class="section-card">
+  <h3>Negative Validation Case</h3>
+  <br>
+  <p><strong>Scenario:</strong> Missing email field</p><br>
+
+  <pre>
+POST /users
+{
+  "name": "Heena",
+  "role": "admin"
+}
+  </pre>
+  <br>
+  <p><strong>Expected:</strong> 400 Bad Request</p>
+  <p><strong>Actual:</strong> 200 OK returned</p>
+  <p><strong>Status:</strong> <span class="badge-fail">Fail</span></p>
+</div>
+
+<!-- Defect Report -->
+<div class="section-card">
+  <h3>Sample Defect Report</h3><br>
+
+  <p><strong>Bug ID:</strong> API_002</p>
+  <p><strong>Title:</strong> API returns 200 instead of 400 for missing mandatory field</p>
+  <p><strong>Severity:</strong> High</p>
+  <p><strong>Status:</strong> <span class="badge-open">Open</span></p>
+
+  <p><strong>Impact:</strong> Invalid data may be stored in database causing data inconsistency.</p>
+</div>
+
+<!-- Metrics -->
+<div class="section-card">
+  <h3>Execution Summary</h3>
+
+  <div class="metrics">
+    <div class="metric-box">
+      <h2>30</h2>
+      <p>Total API Test Cases</p>
+    </div>
+
+    <div class="metric-box">
+      <h2>27</h2>
+      <p>Passed</p>
+    </div>
+
+    <div class="metric-box">
+      <h2>3</h2>
+      <p>Failed</p>
+    </div>
+
+    <div class="metric-box">
+      <h2>90%</h2>
+      <p>Coverage</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Conclusion:</strong> Core API functionality is stable. 
+    Validation defects require correction to prevent improper data handling.
+    Overall endpoint reliability is strong with minor input validation gaps.
+  </div>
+</div>
+
+<!-- Business Impact -->
+<div class="section-card">
+  <h3>Business Impact</h3>
+  <br>
+  <ul>
+    <li>Improved backend data validation reliability</li>
+    <li>Reduced risk of invalid database entries</li>
+    <li>Strengthened API contract enforcement</li>
+    <li>Increased confidence in production deployment</li>
+  </ul>
+</div>
+
+</main>
+</div>
+
+</body>
+</html>
