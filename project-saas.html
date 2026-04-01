@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>TaskFlow – Manual Testing Project</title>
+<title>OneBranch – SaaS Technical Documentation Project</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -142,11 +142,9 @@ td {
 
 <main class="content">
 
-<h1>TaskFlow – Manual Testing Case Study</h1>
+<h1>OneBranch – Technical Documentation</h1>
 <p>
-A structured manual testing project conducted on a SaaS-based Task Management Web Application. 
-The objective was to validate functional behavior, improve stability, and ensure production readiness 
-through systematic test design and defect tracking.
+A comprehensive technical documentation project explaining OneBranch, an internal DevOps platform used for building, testing, and deploying large-scale cloud services. 
 </p>
 <br>
 
@@ -155,74 +153,80 @@ through systematic test design and defect tracking.
   <h3>Project Overview</h3>
   <br>
   <ul>
-    <li><strong>Application Type:</strong> SaaS Web Application</li>
-    <li><strong>Domain:</strong> Productivity / Task Management</li>
-    <li><strong>Testing Scope:</strong> Functional, Regression, Validation</li>
-    <li><strong>Methodology:</strong> Manual Testing (STLC Approach)</li>
-    <li><strong>Tools Used:</strong> Excel (Test Cases), JIRA (Defect Tracking), Chrome</li>
+    <li><strong>Platform Type:</strong> Internal DevOps System</li>
+    <li><strong>Domain:</strong> Cloud Engineering / CI-CD</li>
+    <li><strong>Purpose:</strong> Build, Test, Deploy Automation</li>
+    <li><strong>Users:</strong> Internal Engineering Teams</li>
+    <li><strong>Environment:</strong> Large-scale distributed systems</li>
   </ul>
 </div>
 
-<!-- Test Strategy -->
+<!-- Documentation Strategy -->
 <div class="section-card">
-  <h3>Test Strategy & Scope</h3><br>
+  <h3>Core Features</h3><br>
   <ul>
-    <li>Requirement analysis and scenario identification</li>
-    <li>Positive and negative test case design</li>
-    <li>Boundary value validation</li>
-    <li>Input field validation testing</li>
-    <li>Session and authentication validation</li>
-    <li>Regression coverage after defect fixes</li>
+    <li>Automated build pipelines</li>
+    <li>Integrated testing workflows</li>
+    <li>Secure deployment mechanisms</li>
+    <li>Standardized engineering practices</li>
+    <li>Scalable release management</li>
   </ul>
 </div>
 
 <!-- Modules Covered -->
 <div class="section-card">
-  <h3>Modules Covered</h3><br>
+  <h3>Architecture Components</h3><br>
   <ul>
-    <li>User Registration & Authentication</li>
-    <li>Dashboard Functionality</li>
-    <li>Create / Edit / Delete Task</li>
-    <li>Status Updates & Workflow Logic</li>
-    <li>Search & Filtering</li>
-    <li>User Profile Management</li>
+    <li>Source Control Integration</li>
+    <li>Build System & Artifact Management</li>
+    <li>Validation & Quality Gates</li>
+    <li>Deployment Pipelines</li>
+    <li>Monitoring & Telemetry</li>
   </ul>
 </div>
 
 <!-- Sample Test Cases -->
 <div class="section-card">
-  <h3>Sample Test Cases</h3>
+  <h3>Developer Workflow</h3>
 
   <table>
     <tr>
-      <th>ID</th>
-      <th>Module</th>
-      <th>Scenario</th>
-      <th>Expected Result</th>
-      <th>Status</th>
+      <th>Code Commit to repository</th>
+      <th>Automated Build Trigger</th>
+      <th>Test Execution (Unit & Integration)</th>
+      <th>Security & Compliance Checks</th>
+      <th>Staged Deployment (Canary → Global)</th>
     </tr>
 
     <tr>
-      <td>TC_001</td>
-      <td>Registration</td>
-      <td>Valid registration</td>
-      <td>User account created successfully</td>
+      <td>Sample Pipeline Flow</td>
+      <td>Description</td>
+      <td>Outcome</td>
+      <!-- <td>User account created successfully</td> -->
       <td><span class="badge-pass">Pass</span></td>
     </tr>
 
     <tr>
-      <td>TC_002</td>
-      <td>Registration</td>
-      <td>Invalid email format</td>
-      <td>Validation error displayed</td>
+      <td>Build</td>
+      <td>Compile and package code</td>
+      <td>Artifacts generated</td>
+      <!-- <td>Validation error displayed</td> -->
       <td><span class="badge-pass">Pass</span></td>
     </tr>
 
     <tr>
-      <td>TC_010</td>
-      <td>Task Module</td>
-      <td>Create task without title</td>
-      <td>Error message shown</td>
+      <td>Test</td>
+      <td>Run automated tests</td>
+      <td>Validated code</td>
+      <!-- <td>Error message shown</td> -->
+      <td><span class="badge-pass">Pass</span></td>
+    </tr>
+
+    <tr>
+      <td>Deploy</td>
+      <td>Release to staging/production</td>
+      <td>Live deployment</td>
+      <!-- <td>Error message shown</td> -->
       <td><span class="badge-pass">Pass</span></td>
     </tr>
 
@@ -252,34 +256,32 @@ through systematic test design and defect tracking.
 
 <!-- Metrics Dashboard -->
 <div class="section-card">
-  <h3>Execution Summary</h3>
+  <h3>Execution Metrics</h3>
 
   <div class="metrics">
     <div class="metric-box">
-      <h2>45</h2>
-      <p>Total Test Cases</p>
+      <h2>1000+</h2>
+      <p>Services Managed</p>
     </div>
 
     <div class="metric-box">
-      <h2>42</h2>
-      <p>Passed</p>
+      <h2>99.9%</h2>
+      <p>Deployment Reliability</p>
     </div>
 
     <div class="metric-box">
-      <h2>3</h2>
-      <p>Failed</p>
+      <h2>24/7</h2>
+      <p>Continuous Deployment</p>
     </div>
 
     <div class="metric-box">
-      <h2>1</h2>
-      <p>Critical Defect</p>
+      <h2>Global</h2>
+      <p>Infrastructure Coverage</p>
     </div>
   </div>
 
   <div class="highlight-box">
-    <strong>Conclusion:</strong> The application is largely stable. 
-    Identified defects are validation-related and require resolution before production deployment.
-    Overall functional reliability is high with complete regression coverage.
+    <strong>Conclusion:</strong> OneBranch enables highly reliable, secure, and scalable deployment of cloud services by enforcing standardized DevOps practices and automation across engineering teams.
   </div>
 
 </div>
@@ -288,10 +290,11 @@ through systematic test design and defect tracking.
 <div class="section-card">
   <h3>Business Impact</h3><br>
   <ul>
-    <li>Improved input validation reliability</li>
-    <li>Reduced risk of production defects</li>
-    <li>Strengthened user experience consistency</li>
-    <li>Enhanced release confidence through structured regression</li>
+    <li>Improved deployment consistency</li>
+    <li>Reduced production failures</li>
+    <li>Enhanced security compliance</li>
+    <li>Faster release cycles</li>
+    <li>Scalable engineering operations</li>
   </ul>
 </div>
 
