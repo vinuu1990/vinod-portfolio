@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>User Management API – Testing Case Study</title>
+<title>User Management API – Documentation</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -147,27 +147,27 @@ pre {
 
 <main class="content">
 
-<h1>User Management REST API – Testing Case Study</h1>
+<h1>User Management REST API</h1>
 <p>
-This project demonstrates structured API testing practices applied to a REST-based User Management Service. 
-Testing focused on request validation, response accuracy, status codes, authentication behavior, and data integrity.
-</p><br>
+This document provides a comprehensive reference for the User Management API, designed to support user lifecycle operations 
+within a microservices-based DevOps environment. The API enables secure user creation, retrieval, updates, and deletion.</p>
+<br>
 
 <!-- Project Overview -->
 <div class="section-card">
-  <h3>Project Overview</h3><br>
+  <h3>Overview</h3><br>
   <ul>
-    <li><strong>API Type:</strong> RESTful Web Service</li>
-    <li><strong>Format:</strong> JSON</li>
-    <li><strong>Testing Scope:</strong> Functional, Negative, Validation</li>
-    <li><strong>Tool Used:</strong> Postman</li>
-    <li><strong>Methodology:</strong> API Test Case Design + Defect Logging</li>
+    <li><strong>API Type:</strong> REST</li>
+    <li><strong>Base URL:</strong> https://api.example.com/v1</li>
+    <li><strong>Data Format:</strong> JSON</li>
+    <li><strong>Authentication:</strong> Bearer Token (JWT)</li>
+    <li><strong>Versioning:</strong> URI-based</li>
   </ul>
 </div>
 
 <!-- Endpoints Covered -->
 <div class="section-card">
-  <h3>Endpoints Covered</h3><br>
+  <h3>Authentication</h3><br>
   <ul>
     <li><code>POST /users</code> – Create User</li>
     <li><code>GET /users/{id}</code> – Fetch User</li>

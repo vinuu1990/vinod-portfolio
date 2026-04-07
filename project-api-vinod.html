@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Management API – Documentation</title>
+
+<style>
+body { font-family: Arial; background:#f5f7fb; margin:0; }
+.layout { display:flex; }
+
+/* Sidebar */
+.sidebar {
+  width:240px;
+  background:#111827;
+  color:#fff;
+  padding:20px;
+  height:100vh;
+}
+
+.sidebar h2 { margin-bottom:5px; }
+.sidebar p { font-size:13px; color:#9ca3af; }
+
+.sidebar a {
+  display:block;
+  color:#9ca3af;
+  margin:10px 0;
+  text-decoration:none;
+}
+.sidebar a:hover { color:#fff; }
+
+/* Content */
+.content { padding:30px; flex:1; }
+
+.section-card {
+  background:#fff;
+  padding:24px;
+  margin-bottom:25px;
+  border-radius:10px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.06);
+}
+
+pre {
+  background:#111827;
+  color:#e5e7eb;
+  padding:15px;
+  border-radius:8px;
+  overflow-x:auto;
+}
+
+code {
+  background:#e5e7eb;
+  padding:3px 6px;
+  border-radius:5px;
+}
+
+/* Table */
+table { width:100%; border-collapse:collapse; }
+th, td { padding:10px; border-top:1px solid #eee; }
+th { background:#f3f4f6; }
+
+/* Badge */
+.badge { padding:4px 10px; border-radius:20px; font-size:12px; }
+.post { background:#dcfce7; color:#166534; }
+.get { background:#dbeafe; color:#1e40af; }
+
+/* Footer */
+.footer {
+  text-align:center;
+  font-size:13px;
+  color:#777;
+  margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <h2>Vinod Kumar</h2>
+  <p>Technical Writer | API & DevOps Docs</p>
+
+  <a href="#">Overview</a>
+  <a href="#">Authentication</a>
+  <a href="#">Pipelines</a>
+  <a href="#">Deployments</a>
+  <a href="#">Logs</a>
+</aside>
+
+<!-- Content -->
+<main class="content">
+
+<h1>OneBranch DevOps API</h1>
+
+<p>
+This API enables automation of CI/CD workflows including build execution, deployment management, 
+and log retrieval. This documentation sample reflects real-world DevOps API documentation practices.
+</p>
+
+<!-- Overview -->
+<div class="section-card">
+<h3>Base URL</h3>
+<pre>https://api.onebranch.dev/v1</pre>
+
+<p><strong>Protocol:</strong> HTTPS</p>
+<p><strong>Format:</strong> JSON</p>
+</div>
+
+<!-- Auth -->
+<div class="section-card">
+<h3>Authentication</h3>
+<pre>Authorization: Bearer &lt;access_token&gt;</pre>
+</div>
+
+<!-- Pipeline Trigger -->
+<div class="section-card">
+<h3>Trigger Pipeline</h3>
+
+<p><strong>POST /pipelines/trigger</strong></p>
+
+<h4>Request</h4>
+<pre>
+{
+  "repo": "user-service",
+  "branch": "main",
+  "triggered_by": "vinod"
+}
+</pre>
+
+<h4>cURL</h4>
+<pre>
+curl -X POST https://api.onebranch.dev/v1/pipelines/trigger \
+-H "Authorization: Bearer &lt;token&gt;" \
+-H "Content-Type: application/json" \
+-d '{
+  "repo": "user-service",
+  "branch": "main",
+  "triggered_by": "vinod"
+}'
+</pre>
+
+<h4>Response</h4>
+<pre>
+{
+  "pipeline_id": "pl_7890",
+  "status": "started",
+  "timestamp": "2026-01-10T10:00:00Z"
+}
+</pre>
+
+</div>
+
+<!-- Build Status -->
+<div class="section-card">
+<h3>Get Build Status</h3>
+
+<p><strong>GET /builds/{id}</strong></p>
+
+<h4>Response</h4>
+<pre>
+{
+  "build_id": "b_4567",
+  "status": "success",
+  "duration": "5m 32s",
+  "artifact_url": "https://storage.onebranch.dev/builds/b_4567.zip"
+}
+</pre>
+
+</div>
+
+<!-- Deployment -->
+<div class="section-card">
+<h3>Deploy Application</h3>
+
+<p><strong>POST /deployments</strong></p>
+
+<h4>Request</h4>
+<pre>
+{
+  "build_id": "b_4567",
+  "environment": "production",
+  "deployed_by": "vinod"
+}
+</pre>
+
+<h4>Response</h4>
+<pre>
+{
+  "deployment_id": "d_3321",
+  "status": "in_progress"
+}
+</pre>
+
+</div>
+
+<!-- Logs -->
+<div class="section-card">
+<h3>Fetch Logs</h3>
+
+<p><strong>GET /logs/{pipeline_id}</strong></p>
+
+<h4>Response</h4>
+<pre>
+{
+  "logs": [
+    "Cloning repository...",
+    "Running tests...",
+    "Build successful",
+    "Deployment started"
+  ]
+}
+</pre>
+
+</div>
+
+<!-- Errors -->
+<div class="section-card">
+<h3>Error Handling</h3>
+
+<table>
+<tr><th>Code</th><th>Description</th></tr>
+<tr><td>400</td><td>Bad request</td></tr>
+<tr><td>401</td><td>Unauthorized</td></tr>
+<tr><td>500</td><td>Server error</td></tr>
+</table>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<p>Created by <strong>Vinod Kumar</strong></p>
+<p>API & DevOps Documentation Portfolio</p>
+</div>
+
+</main>
+</div>
+
+</body>
+</html>
