@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A technical writing portfolio sample demonstrating documentation planning for a DevOps platform.">
+  <title>OneBranch | Technical Documentation Sample</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .content h1 { font-size: 30px; margin-bottom: 10px; }
+    .content p { color: #555; line-height: 1.65; }
+    .section-card {
+      background: #fff; padding: 26px; margin-bottom: 24px;
+      border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    }
+    .section-card h2, .section-card h3 { margin-top: 0; }
+    .section-card ul, .section-card ol { padding-left: 22px; }
+    .section-card li { margin-bottom: 8px; }
+    .note {
+      background: #f4f6f9; padding: 16px; border-radius: 8px;
+      margin-top: 16px; font-size: 14px;
+    }
+    .flow {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+      gap: 12px; margin: 18px 0;
+    }
+    .flow-step {
+      border: 1px solid #dce2e9; border-radius: 8px; padding: 15px;
+      text-align: center; background: #f9fafc;
+    }
+    .flow-step strong { display: block; margin-bottom: 6px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    th, td { padding: 12px; text-align: left; border: 1px solid #e3e7ed; vertical-align: top; }
+    th { background: #f4f6f9; }
+    @media (max-width: 640px) {
+      .section-card { padding: 18px; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="profile"><img src="profile.jpg" alt="Vinod Kumar"></div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html#about_me">ABOUT ME</a>
+      <a href="index.html#skills">SKILLS</a>
+      <a href="index.html#projects">PROJECTS</a>
+      <a href="index.html#experience">EXPERIENCE</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <p><a href="index.html#projects">← Back to writing samples</a></p>
+    <h1>OneBranch: Technical Documentation Sample</h1>
+    <p>
+      This portfolio sample demonstrates how I would organize technical documentation for an internal
+      DevOps platform used to build, test, and deploy software. The page structure is intended to show
+      documentation planning, workflow explanation, and information organization.
+    </p>
+
+    <section class="section-card">
+      <h2>Project Overview</h2>
+      <table>
+        <tr><th>Topic</th><th>Description</th></tr>
+        <tr><td>Platform type</td><td>Internal DevOps platform</td></tr>
+        <tr><td>Technical area</td><td>Build, test, and deployment workflows</td></tr>
+        <tr><td>Audience</td><td>Developers, QA engineers, and operations teams</td></tr>
+        <tr><td>Documentation goal</td><td>Explain platform concepts, workflow stages, and common tasks in a clear, consistent format</td></tr>
+      </table>
+      <p class="note"><strong>Portfolio note:</strong> This is an illustrative documentation sample. Platform-specific details must be verified against approved source material before publication as product documentation.</p>
+    </section>
+
+    <section class="section-card">
+      <h2>Documentation Scope</h2>
+      <ul>
+        <li><strong>Getting started:</strong> Prerequisites, access requirements, and initial setup.</li>
+        <li><strong>Build workflows:</strong> Explain how source changes enter a build process and how teams locate build results.</li>
+        <li><strong>Testing:</strong> Describe test stages, required checks, and how to interpret results.</li>
+        <li><strong>Deployment:</strong> Document environment selection, approval steps, deployment status, and recovery guidance.</li>
+        <li><strong>Troubleshooting:</strong> Provide symptoms, likely causes, diagnostic steps, and escalation guidance.</li>
+        <li><strong>Reference content:</strong> Define configuration values, command-line options, permissions, and related terminology where verified.</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Example Workflow</h2>
+      <p>The following is a high-level example of how a developer workflow can be presented. Actual stages and approval rules depend on the platform configuration.</p>
+      <div class="flow">
+        <div class="flow-step"><strong>1. Commit</strong><span>Submit source changes</span></div>
+        <div class="flow-step"><strong>2. Build</strong><span>Compile and package</span></div>
+        <div class="flow-step"><strong>3. Test</strong><span>Run configured checks</span></div>
+        <div class="flow-step"><strong>4. Review</strong><span>Check results and approvals</span></div>
+        <div class="flow-step"><strong>5. Deploy</strong><span>Release to the target environment</span></div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Sample Troubleshooting Structure</h2>
+      <p>This example shows a reusable format for troubleshooting content without asserting a real platform defect.</p>
+      <table>
+        <tr><th>Element</th><th>What to document</th></tr>
+        <tr><td>Symptom</td><td>Describe the message or unexpected behavior the user sees.</td></tr>
+        <tr><td>Possible cause</td><td>List only causes confirmed by product or engineering sources.</td></tr>
+        <tr><td>Resolution</td><td>Provide numbered steps that the user can follow.</td></tr>
+        <tr><td>Verification</td><td>Explain how the user can confirm that the issue is resolved.</td></tr>
+        <tr><td>Escalation</td><td>List the logs, run identifiers, or other details to collect before contacting support.</td></tr>
+      </table>
+    </section>
+
+    <section class="section-card">
+      <h2>Documentation Practices Demonstrated</h2>
+      <ul>
+        <li>Organize content around user tasks and clear headings.</li>
+        <li>Use tables for reference information and ordered steps for procedures.</li>
+        <li>Explain technical workflows in simple, direct language.</li>
+        <li>Separate verified platform behavior from examples that need confirmation.</li>
+        <li>Use diagrams and workflow visuals when they help readers understand a process.</li>
+        <li>Maintain content through version control and review workflows.</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Tools and Methods</h2>
+      <p>My documentation workflow includes Markdown, VS Code, Git, Bitbucket, MkDocs, Jira, and collaboration with engineering, QA, product, and operations teams. Mermaid or PlantUML can be used to create diagrams when the workflow requires them.</p>
+    </section>
+
+    <section class="section-card">
+      <h2>Outcome</h2>
+      <p>This sample illustrates my approach to structuring platform documentation so readers can understand the purpose of a system, follow a workflow, find reference details, and troubleshoot issues. Any production version should be validated against current UI behavior and approved technical sources.</p>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
